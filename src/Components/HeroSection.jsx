@@ -1,10 +1,11 @@
-import React from "react";
+import React  from "react";
 import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 import { Button } from "../Styles/Button";
+import { useGlobalContext } from '../context'
 
-const HeroSection = ({name,image}) => {
-
+const HeroSection = () => {
+    const {name,image} = useGlobalContext();
   return (
     <Wrapper>
       <div className="container grid grid-two-column">
@@ -13,7 +14,7 @@ const HeroSection = ({name,image}) => {
           <h1 className="hero-heading">{name}</h1>
           <p className="hero-para">
             {" "}
-            I'm Rishika Lashkari. A React JS Developer, youtuber and freelancer.
+            I'm {name}. A React JS Developer, youtuber and freelancer.
             A full stack Developer, youtuber and freelancer
           </p>
           <Button className="btn hireme-btn">
